@@ -18,12 +18,12 @@ app.use(function (req, res, next) {
 
 // Middlewares
 app.use(express.json());
-app.use(
-  helmet({
-    crossOriginResourcePolicy: false,
-  })
-);
-// app.use(helmet());
+// app.use(
+//   helmet({
+//     crossOriginResourcePolicy: false,
+//   })
+// );
+app.use(helmet());
 
 app.use(cors());
 //

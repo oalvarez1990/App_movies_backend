@@ -7,6 +7,14 @@ const errorHandler = require("./utils/errorHandler");
 
 // Esta es nuestra aplicación
 const app = express();
+//
+app.use(function (req, res, next) {
+  res.setHeader(
+    "Content-Security-Policy",
+    "default-src 'self'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; frame-src 'self'"
+  );
+  next();
+});
 
 // Middlewares
 app.use(express.json());

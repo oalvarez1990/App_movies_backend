@@ -22,7 +22,7 @@ app.use(
           "'unsafe-inline'",
           "'unsafe-eval'",
           "data:",
-          "https://appmoviesbackend-production.up.railway.app/",
+          // "https://appmoviesbackend-production.up.railway.app/",
           "https://appmoviesbackend-production.up.railway.app/api/v1",
         ], // Permite la carga de fuentes web desde tu dominio y el dominio de la fuente web
         contentSecurityPolicy: false,

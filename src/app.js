@@ -9,7 +9,6 @@ const errorHandler = require("./utils/errorHandler");
 const app = express();
 //
 
-
 // Middlewares
 app.use(express.json());
 
@@ -18,7 +17,13 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'"], // Permite la carga desde el mismo dominio
-        fontSrc: ["'self'", "https://appmoviesbackend-production.up.railway.app/"], // Permite la carga de fuentes web desde tu dominio y el dominio de la fuente web
+        fontSrc: [
+          "'self'",
+          "'unsafe-inline'",
+          "'unsafe-eval'",
+          "data:",
+          "https://appmoviesbackend-production.up.railway.app/",
+        ], // Permite la carga de fuentes web desde tu dominio y el dominio de la fuente web
       },
     },
   })

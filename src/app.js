@@ -16,18 +16,16 @@ app.use(express.json());
 app.use(
   helmet({
     contentSecurityPolicy: {
-      useDefaults: false,
       directives: {
-        defaultSrc: ["'self'"],
-        scriptSrc: ["'self'", "example.com"],
-        objectSrc: ["'none'"],
-        upgradeInsecureRequests: [],
+        defaultSrc: ["'self'"], // Permite la carga desde el mismo dominio
+        fontSrc: ["'self'", "appmoviesbackend-production.up.railway.app"], // Permite la carga de fuentes web desde tu dominio y el dominio de la fuente web
       },
     },
-  }),
+  })
 );
-// app.use(helmet());
 
+// app.use(helmet());
+// https://github.com/helmetjs/helmet/blob/main/README.md
 app.use(cors());
 //
 app.use("/api/v1", router);
